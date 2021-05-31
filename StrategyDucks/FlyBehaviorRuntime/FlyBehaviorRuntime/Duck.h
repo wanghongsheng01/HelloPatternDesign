@@ -2,7 +2,7 @@
 //  Duck.h
 //  FlyBehaviorRuntime
 //
-//  Created by 王宏升 on 2021/6/1.
+//  Created by hswang on 2021/6/1.
 //
 
 #ifndef Duck_h
