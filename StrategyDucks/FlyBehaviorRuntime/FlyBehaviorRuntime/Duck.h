@@ -1,8 +1,8 @@
 //
 //  Duck.h
-//  StrategyDucks
+//  FlyBehaviorRuntime
 //
-//  Created by hswang on 2021/5/31.
+//  Created by 王宏升 on 2021/6/1.
 //
 
 #ifndef Duck_h
@@ -22,7 +22,18 @@ public:
     Duck(std::unique_ptr<FlyInterface> fly_ptr, std::unique_ptr<QuackInterface> quack_ptr):
             flyInterface_ptr(std::move(fly_ptr)),
             quackInterface_ptr(std::move(quack_ptr)){}
+    
     virtual ~Duck() = default;
+    
+    /**
+     Quest : Imagine you want to set the duck’s behavior type through a setter method on the
+     duck subclass, rather than by instantiating it in the duck’s constructor.
+     
+     Answer : To change a duck’s behavior at runtime, just call the duck’s setter method for that behavior.
+     */
+    void setFlyInterface(std::unique_ptr<FlyInterface> flyInterface){
+        flyInterface_ptr = std::move(flyInterface);
+    }
     
     void swim(){
         oss<<"we all can swim"<<"\n";
