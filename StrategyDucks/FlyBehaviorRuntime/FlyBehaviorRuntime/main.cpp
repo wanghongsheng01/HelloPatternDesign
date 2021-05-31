@@ -11,7 +11,6 @@
 #include "QuackInterface.h"
 #include "Duck.h"
 
-
 using namespace std;
 
 int main(int argc, const char * argv[]) {
@@ -35,16 +34,22 @@ int main(int argc, const char * argv[]) {
     
     cout<<"Answer: To change a duck’s behavior at runtime, just call the duck’s setter method for that behavior."<<"\n"<<endl;
     
+    cout<<"=== Instantiating fly behavior type in the duck’s constructor at compile time =="<<endl;
+    unique_ptr<Duck> mallard = make_unique<MallardDuck>(); // Instantiate Duck's constructor in the duck subclass
+    mallard->perform_fly();
+    cout<<"Instantiating fly behavior type in the duck’s constructor at compile time!\n"<<endl;
+    
+    
     cout<<"=== Setting flying behavior at runtime =="<<endl;
     unique_ptr<Duck> mallard2 = make_unique<MallardDuck>();
     mallard2->setFlyInterface(std::make_unique<FlyWithWings>());
     mallard2->perform_fly();
-    cout<<"\n";
+    cout<<"Setting flying behavior at runtime!\n"<<endl;
     
     unique_ptr<Duck> mallard3 = make_unique<MallardDuck>();
     mallard3->setFlyInterface(std::make_unique<FlyNoWay>());
     mallard3->perform_fly();
-    
+    cout<<"Setting flying behavior at runtime!\n"<<endl;
     
     return 0;
 }
