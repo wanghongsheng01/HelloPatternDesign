@@ -12,11 +12,13 @@ at runtime.
 ## How
 >How (to design Strategy Pattern)?<br>
 >Take a moment and think about how you would implement a duck so that its behavior could change at runtime.<br>
+>The key is that a Duck will now delegate its flying behavior, instead of using flying methods defined in the Duck class (or subclass).
 > Since `the flyBehavior instance variable` is an interface type, we could (through polymorphism) dynamically<br>
 assign a different `FlyBehavior implementation class` at runtime.
 
 ## Implement
->Add `setFlyInterface` flying behavior at runtime
+>Add `setFlyInterface` flying behavior at runtime<br>
+>Program to Duck Constructor 's Behavior object `Referenced by behaviorInterface`
 
 ## Core Code
   test.cpp
