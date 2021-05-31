@@ -72,3 +72,10 @@ public:
 ```
 ## Print Screen
 ![image](https://user-images.githubusercontent.com/31394900/120230785-a41f8c00-c282-11eb-8e80-a0dd726b1598.png)
+
+## Syntactic
+```cpp
+virtual ~Duck() = default; //virtual destructor
+virtual void show()const = 0; // pure virtual mem_func()
+
+```
