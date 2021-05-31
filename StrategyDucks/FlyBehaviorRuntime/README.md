@@ -57,6 +57,3 @@ public:
 ```
 ## Print Screen
 ![image](https://user-images.githubusercontent.com/31394900/120225242-754fe880-c277-11eb-9281-418fef1f791a.png)
-
-
-public:
