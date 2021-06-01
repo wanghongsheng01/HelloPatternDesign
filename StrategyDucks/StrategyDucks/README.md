@@ -5,14 +5,14 @@
 
 ## Why
 >Why (the Seprate Strategy is benefit to Design)? <br>
->We should NOT program to an implementation!  we are setting the behaviors to concrete classes (by instantiating<br>
-a behavior class like FlyWithWings and assigning it to our behavior reference variable), we could easily change that<br>
-at runtime.
+>We should NOT program to an implementation!  we are setting the behaviors to concrete classes (by `instantiating`<br>
+`a behavior class like FlyWithWings` and `assigning it to our behavior reference variable`), we could easily change that<br>
+at runtime dynamicly.
 
 ## How
 >How (to design Strategy Pattern)?<br>
->Take a moment and think about how you would implement a duck so that its behavior could change at runtime.<br>
->The key is that a Duck will now delegate its flying behavior, instead of using flying methods defined in the Duck class (or subclass).
+>Take a moment and think about how you would implement a duck so that its behavior could change at runtime dynamicly.<br>
+>The key is that a Duck will now `delegate its flying behavior`, instead of using flying methods defined in the Duck class (or subclass).
 > Since `the flyBehavior instance variable` is an interface type, we could (through polymorphism) dynamically<br>
 assign a different `FlyBehavior implementation class` at runtime.
 
@@ -21,11 +21,13 @@ assign a different `FlyBehavior implementation class` at runtime.
 >Program to Duck Constructor 's Behavior object `Referenced by behaviorInterface`
 
 ## Core Code
+>:joy: Duck 委托 Behavior 处理 fly 行为，通过 Behavior Inference in Duck Constructor.<br>
+>:joy: Programming to a `supertype` so that `the actual runtime object isn’t locked into the code`.
+        the declared type of the variables should be a supertype, usually an abstract class or interface, 
+        `so that the objects assigned to those variables can be of any concrete implementation of the supertype`.<br>
+        
   test.cpp
 ```cpp
-    /**
-    Duck 委托 Behavior 处理 fly 行为，通过 Behavior Inference in Duck Constructor
-    */
     cout<<"Here is MallardDuck:"<<endl;
     unique_ptr<Duck> mallard = make_unique<MallardDuck>(); 
     mallard->perform_fly();
@@ -34,8 +36,9 @@ assign a different `FlyBehavior implementation class` at runtime.
 ```hpp
 /**
  member var : Each Duck has a reference to something that implements the FlyInterface
- >mem func : Rather than handling the fly behavior itself, the Duck object delegates that behavior to the object REFERENCED by flyInterface.
+ mem func : Rather than handling the fly behavior itself, the Duck object delegates that behavior to the object REFERENCED by flyInterface.
  */
+ 
 class Duck{
 public:
     Duck(std::unique_ptr<FlyInterface> fly_ptr, std::unique_ptr<QuackInterface> quack_ptr):
@@ -52,17 +55,11 @@ public:
     std::unique_ptr<QuackInterface> quackInterface_ptr;
 };
 
-
-/**
- programming to a supertype so that the actual runtime object isn’t locked into the code.
- the declared type of the variables should be a supertype, usually an abstract class or interface, so that the objects
- assigned to those variables can be of any concrete implementation of the supertype
- */
-
 /**
  Duck 成员变量声明为超类型 FlyInterface，实际的 runtime 对象是 FlyWithWings
  针对超类型编程，变量的声明类型应该是超类型
  */
+ 
 class MallardDuck final : public Duck{
 public:
     MallardDuck() : Duck(std::make_unique<FlyWithWings>(),
