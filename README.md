@@ -8,7 +8,7 @@ Download the code and compile and run from the command line, or load the code in
 Here are the command instructions for compiling and running this project from the command line:
 * `compiling all the CPP files and then generating the executable main file`
 ###
-    g++ test.cpp -std=c++11 -Wall -o main
+    g++ test.cpp -std=c++14 -Wall -o main
  
 * `running the  main file`
 ###
