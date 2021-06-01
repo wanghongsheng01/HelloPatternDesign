@@ -41,9 +41,7 @@ assign a different `FlyBehavior implementation class` at runtime.
  
 class Duck{
 public:
-    Duck(std::unique_ptr<FlyInterface> fly_ptr, std::unique_ptr<QuackInterface> quack_ptr):
-            flyInterface_ptr(std::move(fly_ptr)),
-            quackInterface_ptr(std::move(quack_ptr)){}
+    Duck(std::unique_ptr<FlyInterface> fly_ptr) : flyInterface_ptr(std::move(fly_ptr)){}
     virtual ~Duck() = default;
     
     void perform_fly() const {
@@ -52,7 +50,6 @@ public:
      
 public:
     std::unique_ptr<FlyInterface> flyInterface_ptr;//Duck 对象不亲自处理 fly 行为，委托给 FlyInterface 对象
-    std::unique_ptr<QuackInterface> quackInterface_ptr;
 };
 
 /**
