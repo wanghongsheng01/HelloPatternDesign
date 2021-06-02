@@ -1,5 +1,5 @@
 # Setting behavior dynamically
-set the duck’s behavior type through a setter method on the duck subclass instead of instantiating it in the duck’s constructor.
+Set the duck’s behavior type through a setter method on the duck subclass instead of instantiating it in the duck’s constructor.
 
 ## Core Code
 Duck.h
