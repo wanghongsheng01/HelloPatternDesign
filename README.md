@@ -20,6 +20,6 @@ A designer thinks about how to create `flexible` designs that are maintainable a
 creating maintainable OO systems is thinking about how they might change in the future and these principles address those issues.
 
 # OO Principles
-* Encapsulate what varies
-* Favor Composition over Inheritence
-* Program to Interfaces rather than Implementations
+* `Encapsulate` what `varies`
+* Favor `Composition` over Inheritence
+* `Program to Interfaces` rather than Implementations
