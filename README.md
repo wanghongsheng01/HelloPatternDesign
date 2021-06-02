@@ -16,10 +16,15 @@ Here are the command instructions for compiling and running this project from th
     ./main
     
 # Motive
-A designer thinks about how to create `flexible` designs that are maintainable and that can `cope with change`. One of the secrets to <br>
-creating maintainable OO systems is thinking about how they might change in the future and these principles address those issues.
+A designer thinks about how to create `flexible` designs that are maintainable and that can `cope with change`. One of the secrets<br>
+to creating maintainable OO systems is thinking about how they might change in the future and these principles address those issues.
 
 # OO Principles
 * `Encapsulate` what `varies`
 * Favor `Composition` over Inheritence
 * `Program to Interfaces` rather than Implementations
+
+# How to learn Design Patterns?
+Design patterns don’t go directly into your code, they first go into your BRAIN. Once you’ve `loaded your brain` with a good working knowledge
+of patterns, you can then start to apply them to your new designs, and rework your old code when you find it’s `degrading into an inflexible`
+mess of code.
