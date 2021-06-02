@@ -103,10 +103,10 @@ public:
 ```
 ## Printf Test Results
 * command line (`NOTE` : -std=c++14)
-> `g++ TestDuck.cpp -std=c++14 -Wall -o main`
->  `./main`
+	> `g++ TestDuck.cpp -std=c++14 -Wall -o main`
+ 	>  `./main`
 
 * display <br>
 
-![image](https://user-images.githubusercontent.com/31394900/120362969-39338b00-c33e-11eb-95a6-1cef844da833.png)
+ 	![image](https://user-images.githubusercontent.com/31394900/120362969-39338b00-c33e-11eb-95a6-1cef844da833.png)
 
