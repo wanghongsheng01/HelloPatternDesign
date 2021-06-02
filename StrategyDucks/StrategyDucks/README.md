@@ -20,11 +20,15 @@ assign a different `FlyBehavior implementation class` at runtime.
 >Add `setFlyInterface` flying behavior at runtime<br>
 >Program to Duck Constructor 's Behavior object `Referenced by behaviorInterface`
 
+* BehaviorDelegation
+> Duck 委托 Behavior 处理 fly 行为，通过 Behavior Inference in Duck Constructor.<br>
+
+* Declared SuperType
+> Programming to a `supertype` so that `the actual runtime object isn’t locked into the code`.
+the declared type of the variables should be a supertype, usually an abstract class or interface, 
+`so that the objects assigned to those variables can be of any concrete implementation of the supertype`.<br>
+
 ## Core Code
->:joy: Duck 委托 Behavior 处理 fly 行为，通过 Behavior Inference in Duck Constructor.<br>
->:joy: Programming to a `supertype` so that `the actual runtime object isn’t locked into the code`.
-        the declared type of the variables should be a supertype, usually an abstract class or interface, 
-        `so that the objects assigned to those variables can be of any concrete implementation of the supertype`.<br>
         
   test.cpp
 ```cpp
