@@ -3,7 +3,7 @@ A duck call is a device that hunters use to mimic the calls (quacks) of ducks. H
 
 # Composition Pattern
 >* Design Principle : Favor composition over inheritance.` HAS-A can be better than IS-A.`<br>
->* HAS-A relationship : each duck has a FlyBehavior to which it delegates flying.<br>
+>* HAS-A relationship : each Duck has a FlyBehavior to which it delegates flying.<br>
 
 >>* Favor Composition 👍🏼  When you put two classes together like this you’re using `composition`. Instead of `inheriting` their behavior, the ducks get their behavior by being composed with the right `behavior object`.
 
