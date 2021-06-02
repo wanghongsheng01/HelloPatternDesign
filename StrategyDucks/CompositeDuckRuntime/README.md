@@ -31,7 +31,7 @@ public:
 
 class MimicDuck final : public Duck{
 public:
-	MimicDuck(){}
+	MimicDuck():Duck(){}
 	~MimicDuck(){}
 };
 
