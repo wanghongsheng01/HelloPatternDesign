@@ -16,7 +16,7 @@ Here are the command instructions for compiling and running this project from th
     ./main
     
 # Motive
-A designer thinks about how to create `flexible` designs that are maintainable and that can `cope with change`. One of the secrets
+A designer thinks about how to create `flexible` designs that are maintainable and that can `cope with change`. One of the secrets<br>
 to creating maintainable OO systems is thinking about how they might change in the future and these principles address those issues.
 
 # OO Principles
