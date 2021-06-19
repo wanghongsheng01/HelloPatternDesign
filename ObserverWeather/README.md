@@ -63,6 +63,12 @@ public:
     
 };
 ```
+观察端的子观察员 class SubObserverWeather : public Observer
+* class SubObserverWeather 类使用的 std::shared_ptr
+* explicit 显式构造，只有一个非默认参数 `std::shared_ptr<Subject>`
+* explicit 当除了第一个参数以外的其他参数都有默认值的时候, explicit关键字依然有效, 此时, 当调用构造函数时只传入一个参数, 等效于只有一个参数的类构造函数
+* explicit关键字的作用就是防止类构造函数的隐式自动转换，explicit的优点是可以避免不合时宜的类型变换
+* 被声明为explicit的构造函数通常比其non-explicit兄弟更受欢迎。因为它们禁止编译器执行非预期（往往也不被期望）的类型转换
 
 SubObserverWeather.h
 ```hpp
