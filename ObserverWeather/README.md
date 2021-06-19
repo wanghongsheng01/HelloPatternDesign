@@ -50,8 +50,8 @@ private:
 ```
 Observer 端功能：负责提供 Observer 对象从 Subject 端主动获取 Subject 成员变量的方法
 * 由于观察端需从 Subject 端获取 Subject 端的成员变量，故观察端需有 `update_from_subject(订阅端成员变量的形参)`
-* 由于观察端需接收订阅端的成员变量，故观察端需定义与订阅端同名的成员变量，用来接收订阅端同步过来的数据   
-* 由于观察端需将自己注册(或删除)成为一个 Observer，且因订阅端负责注册 Observer，故观察端需有 Subject 类型的成员变量  
+* 由于观察端需接收订阅端的成员变量，故观察端需定义与订阅端同名的成员变量，用来接收订阅端同步过来的数据 `Temperature_Observer` 和 `Humidity_Observer`  
+* 由于观察端需将自己注册(或删除)成为一个 Observer，且因订阅端负责注册 Observer，故观察端需有 Subject 类型的成员变量 `std::shared_ptr<Subject>`  
 
 Observer.h
 ```hpp
@@ -81,12 +81,12 @@ class SubObserverWeather : public Observer, public Display{
 public:
     explicit SubObserverWeather(std::shared_ptr<Subject> w):Temperature_Observer(0),
                         Humidity_Observer(0),
-                        weather_data(w){
-                            weather_data -> registerObserver(this);
+                        subject_weather(w){
+                            subject_weather -> registerObserver(this);
                         }
     
     ~SubObserverWeather(){
-        weather_data->removeObserver(this);
+        subject_weather->removeObserver(this);
     }
     
     void update_from_subject(float temperature_notify, float humidity_notify) override{
@@ -104,7 +104,7 @@ public:
 private:
     float Temperature_Observer;
     float Humidity_Observer;
-    std::shared_ptr<Subject> weather_data;
+    std::shared_ptr<Subject> subject_weather;
 };
 
 ```
