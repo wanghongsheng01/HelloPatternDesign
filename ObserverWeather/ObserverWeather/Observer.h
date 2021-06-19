@@ -11,7 +11,7 @@
 class Observer{
 public:
     virtual ~Observer()=default;
-    virtual void update_from_weather(float temperature, float humidity)=0;
+    virtual void update_from_subject(float temperature, float humidity)=0;
     
 };
 

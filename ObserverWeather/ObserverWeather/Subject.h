@@ -18,5 +18,4 @@ public:
     virtual void notifyObserver()=0;
 };
 
-
 #endif /* Subject_h */
