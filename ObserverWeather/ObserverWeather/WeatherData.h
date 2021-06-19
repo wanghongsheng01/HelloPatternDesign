@@ -26,7 +26,7 @@ public:
     
     void notifyObserver() override{
         for(auto o:observers){
-            o->update_from_weather(Temperature, Humidity);
+            o->update_from_subject(Temperature, Humidity);
         }
     }
     
