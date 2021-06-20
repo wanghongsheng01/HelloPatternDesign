@@ -5,7 +5,7 @@ Subject 端功能：订阅端 Subject 负责注册/删除 Observer 用户，以�
 * 由于订阅端 Subject::notifyObserver()需将`订阅端`数据同步到 Observer 端，故需借助 Observer 对象的同步功能 `Observer 对象的 update_from_subject(订阅端成员变量)行为`
 
 Subject.h
-```hpp
+```h
 //  定义订阅者 Subject，定义 register/remove/notify 观察者 Observer 对象的行为
 class Observer;
 class Subject{
@@ -18,7 +18,7 @@ public:
 ```
 
 WeatherData.h
-```hpp
+```h
 // 定义 Subject 的具体类 WeatherData，包括实现 Subject 的 register/remove/notify 操作 Observer 行为和自身的 setMeasurements 行为
 class WeatherData : public Subject{    
 public:
@@ -54,7 +54,7 @@ Observer 端功能：负责提供 Observer 对象从 Subject 端主动获取 Sub
 * 由于观察端需将自己注册(或删除)成为一个 Observer，且因订阅端负责注册 Observer，故观察端需有 Subject 类型的成员变量 `std::shared_ptr<Subject>`  
 
 Observer.h
-```hpp
+```h
 //定义观察者 Observer，负责将 class WeatherData : public Subject 数据同步到 class SubObserverWeather : public Observer
 class Observer{
 public:
@@ -71,7 +71,7 @@ public:
 * 被声明为explicit的构造函数通常比其non-explicit兄弟更受欢迎。因为它们禁止编译器执行非预期（往往也不被期望）的类型转换
 
 SubObserverWeather.h
-```hpp
+```h
 // 定义 Weather 观察端，将自身 register/remove 为 Observer，接收 class WeatherData : public Subject 数据
 #include "Observer.h"
 #include "Display.h"
