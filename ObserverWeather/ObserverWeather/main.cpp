@@ -18,9 +18,9 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     auto w = std::make_shared<WeatherData>();
-    auto sub_observer = std::make_shared<SubObserverWeather>(w);
+    auto sub_observer_weather = std::make_shared<SubObserverWeather>(w);
     w->setMeasurements(25, 101);
-    sub_observer->display();
+    sub_observer_weather->display();
     
     return 0;
 }
