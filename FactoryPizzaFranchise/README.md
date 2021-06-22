@@ -1,7 +1,14 @@
 ## FactoryPizzaFranchise Design Graph
-![image](https://user-images.githubusercontent.com/31394900/122860824-fec37980-d350-11eb-90b2-5dc47688503a.png)
+![image](https://user-images.githubusercontent.com/31394900/122861375-ed2ea180-d351-11eb-8761-dfb422d39d8f.png)
+
 
 ## Show Result
+```cpp
+unique_ptr<NYPizzaStore> NYstore = make_unique<NYPizzaStore>();
+cout<<"\n---order NYCheesePizza---\n"<<endl;
+unique_ptr<Pizza> NYCheesePizza = NYstore->orderPizza("Cheese");
+cout<<*NYCheesePizza;
+```
 
 ---order NYCheesePizza---<br>
 
