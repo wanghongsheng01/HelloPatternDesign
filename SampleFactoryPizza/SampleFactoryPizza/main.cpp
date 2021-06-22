@@ -18,10 +18,12 @@ int main(int argc, const char * argv[]) {
     SampleFactoryPizza factory; // 声明 SampleFactoryPizza 对象 factory
     PizzaStore pizzaStore(factory); // 客户 PizzaStore 对象消费 factory 对象
     
+    std::cout<<"order Cheese Pizza"<<std::endl;
     std::unique_ptr<Pizza> pizza_cheese = pizzaStore.orderPizza("Cheese");
     std::cout<<pizza_cheese->getName()<<std::endl;
     std::cout<<*pizza_cheese;
     
+    std::cout<<"order Clam Pizza"<<std::endl;
     std::unique_ptr<Pizza> pizza_clam = pizzaStore.orderPizza("Clam");
     std::cout<<pizza_clam->getName()<<std::endl;
     std::cout<<*pizza_clam;

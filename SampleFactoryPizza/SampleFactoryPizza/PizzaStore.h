@@ -10,8 +10,6 @@
 #include "SampleFactoryPizza.h"
 
 class PizzaStore{
-private:
-    SampleFactoryPizza factory;
 public:
     PizzaStore(SampleFactoryPizza factory){
         this->factory = factory;
@@ -30,6 +28,9 @@ public:
         
         return pizza;
     }
+    
+private:
+    SampleFactoryPizza factory;
     
     
     
